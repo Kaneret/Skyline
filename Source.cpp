@@ -1,8 +1,25 @@
 #include "Sourse.h"
 
 
-void sort()
-{}
+void quickSort(int *a, int min, int max) {
+	int b = a[(min + max) / 2];//средний элемент(по индексу)
+	int l_min = min;
+	int l_max = max;
+
+	while (l_min <= l_max) //разделение на 2 подмассива
+	{
+		while (a[l_min] < b) l_min++;
+		while (a[l_max] > b) l_max--;
+		if (l_min <= l_max) 
+		{
+			swap(a[l_min], a[l_max]);
+			l_min++;
+			l_max--;
+		}
+	}
+	if (l_min < max) quickSort(a, l_min, max);//справа от р
+	if (min < l_max) quickSort(a, min, l_max);//слева от р
+}
 
 void graph()
 {}
