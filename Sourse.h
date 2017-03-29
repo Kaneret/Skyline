@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Header.h"
 
-void quickSort(int *a, int min, int max);
+void itemSort(int **a, int minstr, int maxstr, int kind);

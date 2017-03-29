@@ -18,6 +18,12 @@
     <Text Include="Text.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
+    <Text Include="Save.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="Save1.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h">
@@ -26,12 +32,18 @@
     <ClInclude Include="Sourse.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="minigames.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="minigames.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
