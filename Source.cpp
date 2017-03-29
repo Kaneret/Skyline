@@ -1,4 +1,6 @@
+#include "Header.h"
 #include "Sourse.h"
+
 
 
 void quickSort(int *a, int min, int max) {
@@ -33,39 +35,49 @@ void search()
 void magazine()
 {}
 
-const int N = 256; //Константный размер строки
-char *FName = "c:\\Users\\Олег\documents\visual studio 2015\Projects\Skyline\Skyline\Text.txt"; //Путь к файлу
-/*Вывод текста из файла на экран*/
-void readFile()
+const int N = 256; //Константный размер строки 
+
+void read()
 {
-	cout << endl << "ReadFile:  "; //Для красоты
-	char S[N] = { "" }; //В S будут считываться строки
-	ifstream in1(FName); //Открыли файл для чтения
-	while (!in1.eof()) //Будем читать информацию пока не дойдем до конца файла
+	setlocale(LC_ALL, ".1251");
+	char S[N] = { "" }; //В S будут считываться строки 
+	ifstream in1("Text.txt"); //Открыли файл для чтения 
+	while (!in1.eof()) //Будем читать информацию пока не дойдем до конца файла 
 	{
-		in1.getline(S, N); //Построчное считывание информации в S
-		cout << S << endl; //Вывод очередной строки на экран
+		in1.getline(S, N); //Построчное считывание информации в S 
+		cout « S « endl; //Вывод очередной строки на экран 
+
 	}
-	in1.close(); //Закрыли открытый файл
+	in1.close(); //Закрыли открытый файл 
+	system("pause");
 }
 
-/*Ввод текста в файл*/
-void createFile()
+void save(int coins, int hp, int choice)
 {
-	cout << "Create File:  " << endl; //Для красоты
-	char S[255]; //В S будет считываться строка
-	int count = 0; //Число строк для ввода в файл
-	cout << "Strok budet:  ";
-	cin >> count; //Определили сколько строк вводить
-				  /*Главная часть функции*/
-	ofstream out1(FName); //Открыли файл для записи
-	for (int i = 0; i<count + 1; i++)   //Цикл по количеству нужных строк
-	{
-		cin.getline(S, N); //Запоминаем в S то что ввели с клавиатуры
-		out1 << S << endl; //Записали S в файл и дописали перенос строки
-	}
-	out1.close();
+	coins = 50; // здесь это для проверки, в коде значение будет присваиваться в др местах
+	hp = 2;
+	choice = 1;
+	ofstream out("Save1.txt");
+	out << coins << endl << hp;
+	out.close();
 }
+
+void load(int coins, int hp, int choice)
+{
+	ifstream in("Save1.txt");
+	in >> coins >> hp >> choice;
+	cout << endl << "COINS: " << coins << "		" << "HP: " << hp << endl << endl;
+	system("pause");
+}
+
+void new_game(int coins, int hp, int choice)
+{
+	ifstream in("Save.txt");
+	in >> coins >> hp >> choice;
+	cout << endl << "COINS: " << coins << "		" << "HP: " << hp << endl << endl;
+	system("pause");
+}
+
 
 // функция вывода игровой карты в консоль
 void showMap(char** map, int x, int y)

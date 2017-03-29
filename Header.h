@@ -1,10 +1,9 @@
 #pragma once
-
-#include <conio.h>
 #include <iostream>
 #include <fstream>
-#include <Windows.h>
-
+#include <conio.h>
+#include <cstdio> 
+#include <string>
 using namespace std;
 
 void createFile();

@@ -1,10 +1,3 @@
-#pragma once
-
-#include <conio.h>
-#include <stdio.h>
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include "Header.h"
 
 void quickSort(int *a, int min, int max);
