@@ -1,10 +1,14 @@
 #include "Skyline.h"
+#include "Functions.h"
+#include "Menu.h"
 
 void main()
 {
 	//system("CLS");
+	setlocale(LC_ALL, "RUS");
 	pointToMenu();
 	moveToMenuPoint();
+
 	////
 	////игра, вывод результата
 	////
@@ -26,4 +30,6 @@ void main()
 	}
 	*/// заканчиваем использовать win
 	//win = 0;
+
+	
 }

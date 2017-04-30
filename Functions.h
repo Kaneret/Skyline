@@ -1,5 +1,12 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <conio.h>
+#include <cstdio> 
+#include <string>
+#include <Windows.h>
+#include "Menu.h"
+#include "Definitions.h"
 
-//#include "Skyline.h"
 
-void itemSort(int **a, int minstr, int maxstr, int kind);
+void itemSortStructure(item* a, int min, int max, int kind);               //сортировка инвентаря (и магазина)

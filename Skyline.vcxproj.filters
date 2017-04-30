@@ -27,6 +27,27 @@
     <Text Include="KindChip.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
+    <Text Include="Items.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="Items1.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="MainMenu.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="New.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="Shop.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="Skyline.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="StartGame.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="minigames.h">
@@ -38,10 +59,19 @@
     <ClInclude Include="Definitions.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Functions.h">
+    <ClInclude Include="Skyline.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Skyline.h">
+    <ClInclude Include="Includes.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Loading.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,6 +86,18 @@
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="Skyline.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Print.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Stand.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Loading.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="Functions.cpp">

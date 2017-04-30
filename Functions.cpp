@@ -1,33 +1,55 @@
-#include "Skyline.h"
+#include "Functions.h"
 
-
-const int N = 256; //Константный размер строки (read)
-
-void itemSort(int **a, int minstr, int maxstr, int kind)
+//при вызове сортировки игрок выбирает, по какому параметру вещи
+//будет проводиться сортировка: по характеристикам(1), имени(2), материалу(3) или стомости(4)
+//т.е. на вход поступает значение kind, равное 1, либо 2, либо 3
+//min обозначает минимальный индекс, сначала он равен 0
+//а после - началу второго подмассива и т.д.
+//max обозначает максимальный индекс, сначала он равен длине массива - 1
+//а после - концу первого подмассива и т.д.
+void itemSortStructure(item *a, int min, int max, int kind)
 {
-	int column = kind;                        //выбранный столбец
-	int b = a[(minstr + maxstr) / 2][column]; //средний элемент(по индексу)
-	int l_min = minstr;                       //минимальный индекс строки
-	int l_max = maxstr;                       //максимальный индекс строки
+	item b = a[(min + max) / 2];              //средний элемент(по индексу)
+	int s_min = min;                          //минимальный индекс строки
+	int s_max = max;                          //максимальный индекс строки
 
-	//разделение на 2 подмассива
-	while (l_min <= l_max)                    
+	
+	while (s_min <= s_max)                    //разделение на 2 подмассива
 	{
-		while (a[l_min][column] < b) l_min++;
-		while (a[l_max][column] > b) l_max--;
-		if (l_min <= l_max)
+		if (kind==1)                          //сортируем по характеристикам
+		{ 
+			while (a[s_min].of < b.of) s_min++;
+			while (a[s_max].of > b.of) s_max--;
+		}
+		else if (kind==2)                     //сортируем по названию
 		{
-			swap(a[l_min][column], a[l_max][column]);
-			l_min++;
-			l_max--;
+			while (a[s_min].is < b.is) s_min++;
+			while (a[s_max].is > b.is) s_max--;
+		}
+		else if (kind == 3)                     //сортируем по материалу
+		{
+			while (a[s_min].at < b.at) s_min++;
+			while (a[s_max].at > b.at) s_max--;
+		}
+		else                                  //сортируем по стоимости
+		{
+			while (a[s_min].gold < b.gold) s_min++;
+			while (a[s_max].gold > b.gold) s_max--;
+		}
+		if (s_min <= s_max)
+		{
+			swap(a[s_min], a[s_max]);         //меняем их местами
+			s_min++;
+			s_max--;
 		}
 	}
 
-	if (l_min < maxstr) itemSort(a, l_min, maxstr, kind);//справа от b
-	if (minstr < l_max) itemSort(a, minstr, l_max, kind);//слева от b
+	if (s_min < max) itemSortStructure(a, s_min, max, kind);//справа от b
+	if (min < s_max) itemSortStructure(a, min, s_max, kind);//слева от b
 }
 
 //считывание и вывод из файла
+const int N = 256; //Константный размер строки (read)
 void read()
 {
 	setlocale(LC_ALL, ".1251");
@@ -54,22 +76,22 @@ void save(int coins, int hp, int choice)
 }
 
 //загрузка
-void load(int coins, int hp, int choice)
+/*void load(int coins, int hp, int choice)
 {
 	ifstream in("Save1.txt");
 	in >> coins >> hp >> choice;
 	cout << endl << "COINS: " << coins << "		" << "HP: " << hp << endl << endl;
 	system("pause");
-}
+}*/
 
 //загрузка сохранения для новой игры
-void new_game(int coins, int hp, int choice)
+/*void new_game(int coins, int hp, int choice)
 {
 	ifstream in("Save.txt");
 	in >> coins >> hp >> choice;
 	cout << endl << "COINS: " << coins << "		" << "HP: " << hp << endl << endl;
 	system("pause");
-}
+}*/
 
 //вывод синей линии интерфейса(количество монет и очков здоровья)
 void printInterBlue(int coins, int hp)

@@ -123,24 +123,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="Items.txt" />
+    <Text Include="Items1.txt" />
     <Text Include="KindChip.txt" />
+    <Text Include="MainMenu.txt" />
+    <Text Include="New.txt" />
     <Text Include="Save.txt" />
     <Text Include="Save1.txt" />
+    <Text Include="Shop.txt" />
+    <Text Include="Skyline.txt" />
+    <Text Include="StartGame.txt" />
     <Text Include="Text.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Definitions.h" />
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="Includes.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Loading.h" />
     <ClInclude Include="Skyline.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="minigames.h" />
-    <ClInclude Include="Functions.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Loading.cpp" />
+    <ClCompile Include="Print.cpp" />
     <ClCompile Include="Skyline.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="minigames.cpp" />
     <ClCompile Include="Shop.cpp" />
-    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="Stand.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
