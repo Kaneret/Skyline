@@ -6,9 +6,15 @@ void main()
 {
 	//system("CLS");
 	setlocale(LC_ALL, "RUS");
-	pointToMenu();
-	moveToMenuPoint();
 
+	//pointToMenu();
+	//moveToMenuPoint();
+
+	//интерфейс
+	//printInterBlue(100, 100);
+	//cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+	//printInterGreen();
+	
 	////
 	////игра, вывод результата
 	////
@@ -19,17 +25,17 @@ void main()
 	//skeletonKey(res);
 	//if (result>control) win = true;
 	//control = result;
-	/*// используем win
-	if (win==true)
-	{
-	  переходим дальше по графу
-	}
-	else
-	{
-	  возвращаемся на предыдущую вершину графа
-	}
-	*/// заканчиваем использовать win
+	// используем win
+	//if (win==true)
+	//{
+	//  переходим дальше по графу
+	//}
+	//else
+	//{
+	//  возвращаемся на предыдущую вершину графа
+	//}
+	// заканчиваем использовать win
 	//win = 0;
 
-	
+	getch();
 }

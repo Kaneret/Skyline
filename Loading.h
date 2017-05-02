@@ -1,15 +1,28 @@
 #pragma once
-#include "Includes.h"
 
+#include "Includes.h"
+#include "Inventory.h"
+
+// Структура хранит в себе информацию о игроке
+struct Player
+{
+	int coins;
+	int hp;
+	int choice;
+	string items[9];
+};
+
+// функция загрузки количества монет, здоровья, выборов игрока (основана на массиве)
+void load_massive(Player* player);
 
 // функция сохранения количества монет, здоровья, выборов игрока
-void save(int* coins, int* hp, int* choice);
-// функция загрузки количества монет, здоровья, выборов игрока
-void load(int coins, int hp, int choice);
+void save(Player* player);
+
 // функция создания новой игры
-void new_game(int coins, int hp, int choice);
+void new_game(Player* player);
 
-void load_massive(int coins, int hp, int choice);
+// функция показа предметов, которые уже есть в инвентаре
+void show_items(Player* player);
 
-// главный алгоритм (временно тут)
-//int main();
+// функция псевдосортировки (поиск по слову)
+void find_items(Player* player);
